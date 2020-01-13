@@ -1,0 +1,10 @@
+{
+  "name": "ccbox",
+  "version": "0.1.0",
+  "description": "tools in one app, based on electron.",
+  "main": "index.js",
+  "repository": "https://github.com/ccforeverd/ccbox.git",
+  "author": "zhangshuyao <zh1045456074@163.com>",
+  "license": "MIT",
+  "private": false
+}
