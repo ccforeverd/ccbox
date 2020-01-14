@@ -3,15 +3,15 @@ import { Component } from 'react'
 export default class extends Component {
   state = {
     input: '',
-    message: null,
+    message: null
   }
 
-  componentDidMount() {
+  componentDidMount () {
     // start listening the channel message
     global.ipcRenderer.on('message', this.handleMessage)
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     // stop listening the channel message
     global.ipcRenderer.removeListener('message', this.handleMessage)
   }
@@ -31,15 +31,15 @@ export default class extends Component {
     this.setState({ message: null })
   }
 
-  render() {
+  render () {
     return (
       <div>
-        <h1>Hello Electron!</h1>
+        {/* <h1>Hello Electron!</h1> */}
 
         {this.state.message && <p>{this.state.message}</p>}
 
         <form onSubmit={this.handleSubmit}>
-          <input type="text" onChange={this.handleChange} />
+          <input type='text' onChange={this.handleChange} />
         </form>
 
         <style jsx>{`
@@ -47,7 +47,8 @@ export default class extends Component {
             color: red;
             font-size: 50px;
           }
-        `}</style>
+        `}
+        </style>
       </div>
     )
   }

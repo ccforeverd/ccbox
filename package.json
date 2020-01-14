@@ -2,18 +2,19 @@
   "name": "ccbox",
   "version": "0.1.0",
   "description": "tools in one app, based on electron.",
-  "main": "index.js",
+  "main": "main/index.js",
   "repository": "https://github.com/ccforeverd/ccbox.git",
   "author": "zhangshuyao <zh1045456074@163.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
+    "i": "ELECTRON_MIRROR=https://cdn.npm.taobao.org/dist/electron/ yarn",
     "clean": "rimraf dist renderer/.next renderer/out",
-    "start": "electron main",
+    "start": "electron .",
     "build": "next build renderer && next export renderer",
     "pack-app": "npm run build && electron-builder --dir",
     "dist": "npm run build && electron-builder",
-    "fix": ""
+    "lint": "standard --fix"
   },
   "build": {
     "asar": true,
@@ -22,14 +23,21 @@
       "renderer/out"
     ]
   },
-  "pre-commit": "fix",
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [],
+    "globals": []
+  },
+  "pre-commit": "lint",
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "electron": "^7.1.7",
     "electron-builder": "^21.2.0",
     "next": "latest",
     "pre-commit": "^1.2.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "standard": "^14.3.1"
   },
   "dependencies": {
     "electron-is-dev": "^1.1.0",
