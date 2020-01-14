@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { Button } from 'antd'
 
 export default class extends Component {
   state = {
@@ -34,12 +35,13 @@ export default class extends Component {
   render () {
     return (
       <div>
-        {/* <h1>Hello Electron!</h1> */}
+        <h1>Hello Electron!</h1>
 
         {this.state.message && <p>{this.state.message}</p>}
 
         <form onSubmit={this.handleSubmit}>
           <input type='text' onChange={this.handleChange} />
+          <Button>123</Button>
         </form>
 
         <style jsx>{`
